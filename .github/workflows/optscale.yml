@@ -1,0 +1,20 @@
+name: OptScale Dummy Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  send-status:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send dummy status to OptScale
+        run: |
+          curl -X POST \
+          -H "Content-Type: application/json" \
+          -d '{
+            "Pipeline result": "SUCCESS",
+            "Version": "${{ github.sha }}"
+          }' \
+          $ENV_COLLECTOR_URL
