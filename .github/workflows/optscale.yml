@@ -17,4 +17,4 @@ jobs:
             "Pipeline result": "SUCCESS",
             "Version": "${{ github.sha }}"
           }' \
-          $ENV_COLLECTOR_URL
+          ${{ secrets.ENV_COLLECTOR_URL }}
