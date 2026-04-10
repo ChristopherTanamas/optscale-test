@@ -14,7 +14,7 @@ jobs:
           curl -X POST \
           -H "Content-Type: application/json" \
           -d '{
-            "Pipeline result": "SUCCESS",
+            "Pipeline result": "FAILED",
             "Version": "${{ github.sha }}"
           }' \
           ${{ secrets.ENV_COLLECTOR_URL }}
